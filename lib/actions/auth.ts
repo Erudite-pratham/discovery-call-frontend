@@ -21,9 +21,6 @@ export const loginAction = async (data: {
 
     if (!res.ok) return { error: "Login Failed!!" };
     const rawSetCookie = res.headers.get("set-cookie");
-
-    console.log("set-cookie header: ", rawSetCookie);
-
     if (rawSetCookie) {
       const tokenMatch = rawSetCookie.match(/token=([^;]+)/);
       const token = tokenMatch ? tokenMatch[1] : null;

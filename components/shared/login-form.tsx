@@ -41,12 +41,6 @@ export function LoginForm({
         setIsLoading(false);
         return;
       }
-      // const response = await axios.post(
-      //   `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/login`,
-      //   { email, password },
-      //   { withCredentials: true, headers: { "Content-Type": "application/json" } }
-      // );
-
       const response = await loginAction({ email, password });
 
       console.log("Login successful:", response);
