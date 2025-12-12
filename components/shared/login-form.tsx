@@ -45,6 +45,7 @@ export function LoginForm({
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
+        credentials: 'include',
       });
 
       if (!res.ok) {
@@ -56,7 +57,7 @@ export function LoginForm({
 
       console.log("Login successful:", response);
 
-      router.push("/");
+      // router.push("/");
     } catch (error) {
       console.error("Error during login:", error);
       alert("Login failed. Please check your credentials and try again.");
